@@ -37,4 +37,5 @@ public class TaskServiceImpl extends AbstractMapService<TaskDTO, Long> implement
     public TaskDTO findById(Long id) {
         return super.findById(id);
     }
+
 }

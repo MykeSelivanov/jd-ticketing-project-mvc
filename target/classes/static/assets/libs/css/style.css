@@ -298,7 +298,7 @@ select.form-control {
     background-position: 99% 52%;
     background-size: auto;
     background-repeat: no-repeat;
-    background-image: url(../../images/down-arrow.png);
+    background-image: url(../../../images/down-arrow.png);
     padding-right: 15px;
     border: 1px solid #d2d2e4;
     border-radius: 2px;
@@ -1805,7 +1805,7 @@ Leftsidebar - dark
 ------------------------- */
 
 .sidebar-dark {
-    background-color: #0e0c28;
+    background-color: #031528;
     -webkit-box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
     box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
     -webkit-transition: all 0.3s ease;
@@ -2690,24 +2690,23 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
 
 
 /*--- btn secondary --*/
-
 .btn-secondary {
     color: #fff;
-    background-color: #ff407b;
-    border-color: #ff407b;
+    background-color: #FB6D68;
+    border-color: #FB6D68;
 }
 
 .btn-secondary:hover {
     color: #fff;
-    background-color: #f0346e;
-    border-color: #f0346e;
+    background-color: #B04A46;
+    border-color: #B04A46;
 }
 
 .btn-secondary.focus,
 .btn-secondary:focus {
     color: #fff;
-    background-color: #f0346e;
-    border-color: #f0346e;
+    background-color: #B04A46;
+    border-color: #B04A46;
     box-shadow: 0 0 0 1px rgb(222, 17, 80);
 }
 
@@ -2715,8 +2714,8 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
 .btn-secondary:not(:disabled):not(.disabled):active,
 .show>.btn-secondary.dropdown-toggle {
     color: #fff;
-    background-color: #f0346e;
-    border-color: #f0346e;
+    background-color: #B04A46;
+    border-color: #B04A46;
 }
 
 
@@ -2724,21 +2723,21 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
 
 .btn-success {
     color: #fff;
-    background-color: #2ec551;
-    border-color: #2ec551;
+    background-color: #188E9E;
+    border-color: #188E9E;
 }
 
 .btn-success:hover {
     color: #fff;
-    background-color: #21ae41;
-    border-color: #21ae41;
+    background-color: #147A87;
+    border-color: #147A87;
 }
 
 .btn-success.focus,
 .btn-success:focus {
     color: #fff;
-    background-color: #21ae41;
-    border-color: #21ae41;
+    background-color: #188E9E;
+    border-color: #188E9E;
     box-shadow: 0 0 0 1px rgb(18, 158, 50);
 }
 
@@ -2746,8 +2745,8 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
 .btn-success:not(:disabled):not(.disabled):active,
 .show>.btn-success.dropdown-toggle {
     color: #fff;
-    background-color: #21ae41;
-    border-color: #21ae41;
+    background-color: #188E9E;
+    border-color: #188E9E;
 }
 
 
@@ -2785,31 +2784,31 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
 /*--- btn warning --*/
 
 .btn-warning {
-    color: #2e2f39;
-    background-color: #ffc108;
-    border-color: #ffc108;
+    color: #EBF1F1;
+    background-color: #259BAB;
+    border-color: #259BAB;
 }
 
 .btn-warning:hover {
-    color: #2e2f39;
-    background-color: #f3b600;
-    border-color: #f3b600;
+    color: #EBF1F1;
+    background-color: #197E8C;
+    border-color: #197E8C;
 }
 
 .btn-warning.focus,
 .btn-warning:focus {
-    color: #2e2f39;
-    background-color: #f3b600;
-    border-color: #f3b600;
+    color: #EBF1F1;
+    background-color: #197E8C;
+    border-color: #197E8C;
     box-shadow: 0 0 0 1px rgb(238, 182, 0);
 }
 
 .btn-warning:not(:disabled):not(.disabled).active,
 .btn-warning:not(:disabled):not(.disabled):active,
 .show>.btn-warning.dropdown-toggle {
-    color: #2e2f39;
-    background-color: #f3b600;
-    border-color: #f3b600;
+    color: #EBF1F1;
+    background-color: #197E8C;
+    border-color: #197E8C;
 }
 
 
@@ -5109,8 +5108,6 @@ Vertical Timeline - by CodyHouse.co
     display: flex;
     margin: 0;
     border: 0;
-    -ms-flex-wrap: none;
-    flex-wrap: none;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -5308,7 +5305,6 @@ Vertical Timeline - by CodyHouse.co
 .drag-handle,
 .drag-indicator {
     cursor: move;
-    cursor: -webkit-grab;
     cursor: grab;
 }
 
@@ -5329,7 +5325,7 @@ Vertical Timeline - by CodyHouse.co
     margin: 0 .5em;
     height: 8px;
     width: 6px;
-    background-image: url(../../images/drag-indicator.png);
+    background-image: url(../../../images/drag-indicator.png);
     -webkit-transform: translate3d(-.5em, 0, 0);
     transform: translate3d(-.5em, 0, 0);
     -webkit-user-select: none;
@@ -5676,7 +5672,7 @@ Vertical Timeline - by CodyHouse.co
 .mailbox .drop-title:after {
     content: "";
     position: absolute;
-    background: url(../../assets/images/background/img5.html) no-repeat;
+    /*background: url(../../../images/background/img5.html) no-repeat;*/
     opacity: 0.2;
     top: 0px;
     left: 0px;
@@ -5991,7 +5987,6 @@ Vertical Timeline - by CodyHouse.co
 .btn-group,
 .btn-group-vertical {
     position: relative;
-    display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
     vertical-align: middle;
@@ -6597,7 +6592,6 @@ Vertical Timeline - by CodyHouse.co
 }
 
 .chat-team-sidebar .tab-pane {
-    overflow-y: none;
     -ms-overflow-style: none;
     height: 100%;
 }
@@ -6977,7 +6971,7 @@ Media Query
  
 
 
-}
+
 
 
 /* Custom, iPhone Retina */

@@ -76,7 +76,9 @@ public class ProjectController {
     }
 
     @GetMapping("/manager/complete")
-    public String getProjectByManager(){
+    public String getProjectByManager(Model model){
+
+
 
         return "/manager/project-status";
     }

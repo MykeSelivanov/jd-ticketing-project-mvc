@@ -1,6 +1,7 @@
 package com.cybertek.controller;
 
 import com.cybertek.dto.ProjectDTO;
+import com.cybertek.dto.UserDTO;
 import com.cybertek.enums.Status;
 import com.cybertek.service.ProjectService;
 import com.cybertek.service.UserService;
@@ -11,6 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/project")
@@ -78,6 +82,10 @@ public class ProjectController {
     @GetMapping("/manager/complete")
     public String getProjectByManager(Model model){
 
+        UserDTO manager = userService.findById("john@cybertek.com");
+
+        List<ProjectDTO> projects = projectService.findAll().stream().filter(project -> project.getAssignedManager().equals(manager)).collect(Collectors.toList());
+        model.addAttribute("projects", projects);
 
 
         return "/manager/project-status";

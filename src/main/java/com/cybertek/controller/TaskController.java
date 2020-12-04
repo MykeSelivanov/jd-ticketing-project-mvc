@@ -81,4 +81,10 @@ public class TaskController {
         return "redirect:/task/create";
     }
 
+    @GetMapping("/employee/pending-tasks")
+    public String getTaskByEmployee(Model model){
+
+        return "employee/pending-tasks";
+    }
+
 }

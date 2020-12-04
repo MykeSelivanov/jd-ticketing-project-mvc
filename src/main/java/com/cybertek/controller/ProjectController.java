@@ -83,6 +83,13 @@ public class ProjectController {
         return "redirect:/project/create";
     }
 
+    @GetMapping("/manager/complete/{projectcode}")
+    public String completeProjectAsManager(@PathVariable("projectcode") String projectCode){
+
+        projectService.complete(projectService.findById(projectCode));
+        return "redirect:/project/manager/complete";
+    }
+
     @GetMapping("/manager/complete")
     public String getProjectByManager(Model model){
 

@@ -38,10 +38,10 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label>Project</label>
-                                                    <select th:field="*{}"class="custom-select" required="required">
+                                                    <select th:field="*{project}"class="custom-select" required="required">
                                                         <option th:value=" ''" th:text="Select"></option>
-                                                        <option th:each="project : ${}" th:value="${}"
-                                                                th:text="${ + '-' + }"></option>
+                                                        <option th:each="project : ${projects}" th:value="${project.projectCode}"
+                                                                th:text="${project.projectCode + '-' + project.projectName}"></option>
                                                     </select>
                                                     <div class="invalid-feedback">Please choose project</div>
                                                 </div>

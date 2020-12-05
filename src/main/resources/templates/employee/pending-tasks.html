@@ -38,7 +38,7 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label>Project</label>
-                                                    <select th:field="*{project}"class="custom-select" required="required">
+                                                    <select th:field="*{}"class="custom-select" required="required">
                                                         <option th:value=" ''" th:text="Select"></option>
                                                         <option th:each="project : ${}" th:value="${}"
                                                                 th:text="${ + '-' + }"></option>
@@ -52,9 +52,9 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label>Assigned Employee</label>
-                                                    <select th:field="*{assignedEmployee}" class="custom-select" required="required">
+                                                    <select th:field="*{}" class="custom-select" required="required">
                                                         <option th:value=" ''" th:text="Select"></option>
-                                                        <option th:each="employee : ${employees}" th:value="${employee.userName}"
+                                                        <option th:each="employee : ${}" th:value="${}"
                                                                 th:text="${employee.firstName + ' ' + employee.lastName}"></option>
                                                     </select>
                                                     <div class="invalid-feedback">Please choose employee</div>

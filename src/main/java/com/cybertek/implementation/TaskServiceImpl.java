@@ -51,4 +51,10 @@ public class TaskServiceImpl extends AbstractMapService<TaskDTO, Long> implement
         return super.findAll().stream()
                 .filter(task -> task.getProject().getAssignedManager().equals(manager)).collect(Collectors.toList());
     }
+
+    @Override
+    public List<TaskDTO> findTaskByEmployee(UserDTO employee) {
+        return super.findAll().stream()
+                .filter(task -> task.getAssignedEmployee().equals(employee)).collect(Collectors.toList());
+    }
 }

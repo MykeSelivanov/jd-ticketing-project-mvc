@@ -9,4 +9,6 @@ public interface TaskService extends CrudService<TaskDTO, Long> {
 
     List<TaskDTO> findTaskByManager(UserDTO manager);
 
+    List<TaskDTO> findTaskByEmployee(UserDTO employee);
+
 }

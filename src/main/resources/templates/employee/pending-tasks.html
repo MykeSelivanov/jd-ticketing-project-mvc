@@ -32,7 +32,7 @@
                                 <div class="panel-body">
 
                                     <!-- ------------------------FORM START----------------------------- -->
-                                    <form class="needs-validation" novalidate th:action="@{/task/create}" method="post" th:object="${task}" >
+                                    <form class="needs-validation" novalidate th:action="@{/task/create}" method="post"  >
 
                                         <div class="row">
                                             <div class="col">
@@ -76,7 +76,7 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label>Task Detail</label>
-                                                    <textarea class="form-control" th:field="*{taskDetail}"  required></textarea>
+                                                    <textarea class="form-control"   required></textarea>
                                                     <div class="invalid-feedback">Please enter task detail</div>
                                                 </div>
                                             </div>
@@ -129,14 +129,11 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr th:each="task : ${tasks}">
-                                                <td th:text="${task.project.projectCode + '-' + task.project.projectName}"></td>
-                                                <td th:text="${task.taskSubject}"></td>
-                                                <td th:text="${task.assignedEmployee.firstName +' ' + task.assignedEmployee.lastName}"></td>
-                                                <td th:text="${#temporals.format(task.assignedDate,'MM/dd/yyyy')}"></td>
-                                                <td th:text="${task.taskStatus}"></td>
+                                            <tr>
+                                                <td ></td>
+
                                                 <td>
-                                                    <a th:href="@{/task/update/{id}(id=${task.getId()})}" class="btn btn-warning btn-sm">Update</a>
+                                                    <a class="btn btn-warning btn-sm">Update</a>
                                                 </td>
 
                                             </tr>

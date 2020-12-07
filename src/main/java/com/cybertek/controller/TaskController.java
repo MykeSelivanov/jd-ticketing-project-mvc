@@ -93,9 +93,10 @@ public class TaskController {
     }
 
     @GetMapping("/employee/archive")
-    public String getCompletedProjectByEmployee(Model model){
+    public String getCompletedTasksByEmployee(Model model){
 
         UserDTO employee = userService.findById("craig@cybertek.com");
+
         List <TaskDTO> completedTasksByEmployee = taskService.findAll().stream()
                 .filter(task -> task.getAssignedEmployee().equals(employee))
                 .filter(task -> task.getTaskStatus().equals(Status.COMPLETE)).collect(Collectors.toList());

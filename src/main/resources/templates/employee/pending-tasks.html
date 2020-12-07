@@ -32,16 +32,13 @@
                                 <div class="panel-body">
 
                                     <!-- ------------------------FORM START----------------------------- -->
-                                    <form class="needs-validation" novalidate th:action="@{/task/create}" method="post"  >
+                                    <form class="needs-validation" novalidate>
 
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label>Project</label>
-                                                    <select th:field="*{project}"class="custom-select" required="required">
-                                                        <option th:value=" ''" th:text="Select"></option>
-                                                        <option th:each="project : ${projects}" th:value="${project.projectCode}"
-                                                                th:text="${project.projectCode + '-' + project.projectName}"></option>
+                                                    <select class="custom-select" required="required">
                                                     </select>
                                                     <div class="invalid-feedback">Please choose project</div>
                                                 </div>
@@ -52,10 +49,7 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label>Assigned Employee</label>
-                                                    <select th:field="*{assignedEmployee}" class="custom-select" required="required">
-                                                        <option th:value=" ''" th:text="Select"></option>
-                                                        <option th:each="employee : ${employees}" th:value="${employee.userName}"
-                                                                th:text="${employee.firstName + ' ' + employee.lastName}"></option>
+                                                    <select class="custom-select" required="required">
                                                     </select>
                                                     <div class="invalid-feedback">Please choose employee</div>
                                                 </div>
@@ -66,7 +60,7 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label class="col-form-label">Task Subject</label>
-                                                    <input id="projectname" type="text" placeholder="task subject" th:field="*{taskSubject}" class="form-control" required>
+                                                    <input id="tasksubject" type="text" placeholder="task subject" class="form-control" required>
                                                     <div class="invalid-feedback">Please enter task subject.</div>
                                                 </div>
                                             </div>
@@ -75,9 +69,20 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <label>Task Detail</label>
-                                                    <textarea class="form-control"   required></textarea>
+                                                    <label>Detail</label>
+                                                    <textarea class="form-control" required></textarea>
                                                     <div class="invalid-feedback">Please enter task detail</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label>Status</label>
+                                                    <select class="custom-select" required="required">
+                                                    </select>
+                                                    <div class="invalid-feedback">Status</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -130,7 +135,11 @@
                                             </thead>
                                             <tbody>
                                             <tr>
-                                                <td ></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
 
                                                 <td>
                                                     <a class="btn btn-warning btn-sm">Update</a>

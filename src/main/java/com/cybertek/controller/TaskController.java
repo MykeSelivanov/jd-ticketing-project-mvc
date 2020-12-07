@@ -87,7 +87,7 @@ public class TaskController {
     @GetMapping("/employee/pending-tasks")
     public String getTaskByEmployee(Model model){
 
-        model.addAttribute("tasks");
+        model.addAttribute("tasks", taskService.findAll());
 
         return "employee/pending-tasks";
     }

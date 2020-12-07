@@ -84,6 +84,14 @@ public class TaskController {
         return "redirect:/task/create";
     }
 
+    @GetMapping("/employee/pending-task/update/{id}")
+    public String updateTaskStatus(@PathVariable("id") Long id, Model model) {
+
+        model.addAttribute("task", taskService.findById(id));
+
+        return "employee/pending-task-update";
+    }
+
     @GetMapping("/employee/pending-tasks")
     public String getTaskByEmployee(Model model){
 

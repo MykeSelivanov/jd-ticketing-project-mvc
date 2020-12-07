@@ -145,7 +145,7 @@
                                                 <td th:text="${task.taskStatus}"></td>
 
                                                 <td>
-                                                    <a class="btn btn-warning btn-sm">Update</a>
+                                                    <a th:href="@{/task/employee/pending-task/update/{id}(id=${task.getId()})}" class="btn btn-warning btn-sm">Update</a>
                                                 </td>
 
                                             </tr>

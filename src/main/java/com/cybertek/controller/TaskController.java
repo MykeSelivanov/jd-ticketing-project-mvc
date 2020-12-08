@@ -100,7 +100,7 @@ public class TaskController {
 
         taskService.update(task);
 
-        return "redirect:/employee/pending-tasks";
+        return "redirect:/task/employee/pending-tasks";
     }
 
     @GetMapping("/employee/pending-tasks")

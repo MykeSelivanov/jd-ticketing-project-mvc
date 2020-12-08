@@ -32,14 +32,14 @@
                                 <div class="panel-body">
 
                                     <!-- ------------------------FORM START----------------------------- -->
-                                    <form class="needs-validation" novalidate th:action="@{/task/update/{id}(id=${task.getId()})}" method="post" th:object="${task}">
+                                    <form class="needs-validation" novalidate th:action="@{/task/employee/pending-task/update/{id}(id=${task.getId()})}" method="post" th:object="${task}">
 
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label>Project</label>
-                                                    <select class="custom-select" required="required" disabled="disabled">
-                                                        <option th:value=" ''" th:text="Select"></option>
+                                                    <select th:field="*{project}" class="custom-select" required="required" disabled="disabled">
+                                                        <option th:value="${task.project}" th:text="${task.project.projectCode + ' ' + task.project.projectName}"></option>
                                                     </select>
                                                     <div class="invalid-feedback">Please choose project</div>
                                                 </div>
@@ -50,8 +50,8 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label>Assigned Employee</label>
-                                                    <select class="custom-select" required="required" disabled="disabled">
-                                                        <option th:value=" ''" th:text="Select"></option>
+                                                    <select th:field="*{assignedEmployee}" class="custom-select" required="required" disabled="disabled">
+                                                        <option th:value="${task.assignedEmployee}" th:text="${task.assignedEmployee.firstName + ' ' + task.assignedEmployee.lastName}"></option>
                                                     </select>
                                                     <div class="invalid-feedback">Please choose employee</div>
                                                 </div>
@@ -62,7 +62,7 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label class="col-form-label">Task Subject</label>
-                                                    <input id="tasksubject" type="text" placeholder="Task Subject" class="form-control" required readonly>
+                                                    <input th:field="*{taskSubject}" id="tasksubject" type="text" placeholder="Task Subject" class="form-control" required readonly>
                                                     <div class="invalid-feedback">Please enter task subject</div>
                                                 </div>
                                             </div>
@@ -72,7 +72,7 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label>Detail</label>
-                                                    <textarea class="form-control" required readonly></textarea>
+                                                    <textarea th:field="*{taskDetail}" class="form-control" required readonly></textarea>
                                                     <div class="invalid-feedback">Please enter task detail</div>
                                                 </div>
                                             </div>
@@ -82,8 +82,9 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label>Status</label>
-                                                    <select class="custom-select" required="required">
+                                                    <select th:field="*{taskStatus}" class="custom-select" required="required">
                                                         <option th:value=" ''" th:text="Select"></option>
+                                                        <option th:value="${task.taskStatus}" th:text="${task.taskStatus}"></option>
                                                     </select>
                                                     <div class="invalid-feedback">You need to chose task from the list below before updating Status!</div>
                                                 </div>

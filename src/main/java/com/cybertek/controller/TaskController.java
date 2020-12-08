@@ -103,6 +103,8 @@ public class TaskController {
         TaskDTO taskToUpdate = taskService.findById(id);
         taskToUpdate.setTaskStatus(task.getTaskStatus());
 
+        taskService.update(taskToUpdate);
+
         return "redirect:/task/employee/pending-tasks";
     }
 

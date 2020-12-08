@@ -87,9 +87,20 @@ public class TaskController {
     @GetMapping("/employee/pending-task/update/{id}")
     public String updateTaskStatus(@PathVariable("id") Long id, Model model) {
 
+        UserDTO employee = userService.findById("craig@cybertek.com");
+
+        model.addAttribute("tasks", taskService.findTaskByEmployee(employee));
         model.addAttribute("task", taskService.findById(id));
 
         return "employee/pending-task-update";
+    }
+
+    @PostMapping("/employee/pending-task/update/{id}")
+    public String editTaskByEmployee(@PathVariable("id") Long id, TaskDTO task) {
+
+        taskService.update(task);
+
+        return "redirect:/employee/pending-tasks";
     }
 
     @GetMapping("/employee/pending-tasks")

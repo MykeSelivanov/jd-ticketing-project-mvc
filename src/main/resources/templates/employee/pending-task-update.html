@@ -84,7 +84,7 @@
                                                     <label>Status</label>
                                                     <select th:field="*{taskStatus}" class="custom-select" required="required">
                                                         <option th:value=" ''" th:text="Select"></option>
-                                                        <option th:value="${task.taskStatus}" th:text="${task.taskStatus}"></option>
+                                                        <option th:each="status : ${statusList}" th:value="${status}" th:text="${status}"></option>
                                                     </select>
                                                     <div class="invalid-feedback">You need to chose task from the list below before updating Status!</div>
                                                 </div>

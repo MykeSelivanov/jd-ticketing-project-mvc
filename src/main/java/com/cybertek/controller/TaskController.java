@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -91,6 +92,7 @@ public class TaskController {
 
         model.addAttribute("tasks", taskService.findTaskByEmployee(employee));
         model.addAttribute("task", taskService.findById(id));
+        model.addAttribute("statusList", Arrays.asList(Status.COMPLETE,Status.IN_PROGRESS,Status.OPEN,Status.UAT_TEST));
 
         return "employee/pending-task-update";
     }
@@ -98,7 +100,8 @@ public class TaskController {
     @PostMapping("/employee/pending-task/update/{id}")
     public String editTaskByEmployee(@PathVariable("id") Long id, TaskDTO task) {
 
-        taskService.update(task);
+        TaskDTO taskToUpdate = taskService.findById(id);
+        taskToUpdate.setTaskStatus(task.getTaskStatus());
 
         return "redirect:/task/employee/pending-tasks";
     }

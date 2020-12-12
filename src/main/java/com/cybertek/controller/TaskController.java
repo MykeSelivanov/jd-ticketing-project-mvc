@@ -118,18 +118,5 @@ public class TaskController {
         return "employee/pending-tasks";
     }
 
-    @GetMapping("/employee/archive")
-    public String getCompletedTasksByEmployee(Model model){
-
-        UserDTO employee = userService.findById("craig@cybertek.com");
-
-        List <TaskDTO> completedTasksByEmployee = taskService.findAll().stream()
-                .filter(task -> task.getAssignedEmployee().equals(employee))
-                .filter(task -> task.getTaskStatus().equals(Status.COMPLETE)).collect(Collectors.toList());
-
-        model.addAttribute("completedTasksByEmployee", completedTasksByEmployee);
-
-        return "/employee/archive";
-    }
 
 }

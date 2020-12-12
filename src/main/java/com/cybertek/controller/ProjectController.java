@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -124,8 +125,26 @@ public class ProjectController {
 
     @GetMapping("/employee/archive")
     public String getArchivedProjects(Model model){
+        checkTheProjectsStatus();
+
 
         return "employee/archive";
+    }
+
+    List<TaskDTO> getArchivedProjectsWithTasks(){
+
+        List<TaskDTO> taskList = new ArrayList<>();
+
+
+    }
+
+    void checkTheProjectsStatus(){
+        taskService.findAll().stream()
+                .forEach(task -> {
+                    if(task.getTaskStatus() != Status.COMPLETE){
+                        task.getProject().setProjectStatus(Status.IN_PROGRESS);
+                    }
+                });
     }
 
 }

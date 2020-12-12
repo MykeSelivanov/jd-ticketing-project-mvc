@@ -140,7 +140,7 @@ public class ProjectController {
                 .filter(task -> task.getProject().getProjectStatus() == Status.COMPLETE && task.getTaskStatus() == Status.COMPLETE)
                 .collect(Collectors.toList());
 
-
+        return taskList;
     }
 
     void checkTheProjectsStatus(){

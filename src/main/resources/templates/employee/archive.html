@@ -72,7 +72,7 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr th:each="task : ${completedTasksByEmployee}">
+                                            <tr th:each="task : ${archivedTasks}">
                                                 <td th:text="${task.project.projectCode + ' - ' + task.project.projectName}"></td>
                                                 <td th:text="${task.taskSubject}"></td>
                                                 <td th:text="${task.assignedEmployee.firstName + ' ' + task.assignedEmployee.lastName}"></td>

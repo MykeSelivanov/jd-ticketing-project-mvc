@@ -126,14 +126,19 @@ public class ProjectController {
     @GetMapping("/employee/archive")
     public String getArchivedProjects(Model model){
         checkTheProjectsStatus();
+        List<TaskDTO> archivedTasks = getArchivedProjectsWithTasks();
 
+        model.addAttribute("archivedTasks", archivedTasks);
 
         return "employee/archive";
     }
 
     List<TaskDTO> getArchivedProjectsWithTasks(){
-
-        List<TaskDTO> taskList = new ArrayList<>();
+        List<TaskDTO> taskList = taskService
+                .findAll()
+                .stream()
+                .filter(task -> task.getProject().getProjectStatus() == Status.COMPLETE && task.getTaskStatus() == Status.COMPLETE)
+                .collect(Collectors.toList());
 
 
     }

@@ -123,6 +123,9 @@ public class ProjectController {
     }
 
     @GetMapping("/employee/archive")
+    public String getArchivedProjects(Model model){
 
+        return "employee/archive";
+    }
 
 }
